@@ -465,7 +465,7 @@ html,body{height:100%;background:var(--bg);color:var(--text);font-family:'DM San
 
 <script>
 // ── HARDCODED CONFIG ──────────────────────────────────────────
-const SCRIPT_URL = 'YOUR_APPS_SCRIPT_URL_HERE';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwe-7g56wL5Ry_sXiVYMWbqXdMKlrfII-q34yIsb-FqYMEmq3DCpF38-3oN4xQmoT-F/exec';
 const ADMIN_PASSWORD = 'password123';
 // ─────────────────────────────────────────────────────────────
 
@@ -548,7 +548,7 @@ document.addEventListener('DOMContentLoaded',()=>{
   go(isDesktop()?'dashboard':'transactions');
 
   renderAll();
-  if(SCRIPT_URL&&SCRIPT_URL!=='YOUR_APPS_SCRIPT_URL_HERE')loadData();
+  if(SCRIPT_URL&&SCRIPT_URL!=='https://script.google.com/macros/s/AKfycbwe-7g56wL5Ry_sXiVYMWbqXdMKlrfII-q34yIsb-FqYMEmq3DCpF38-3oN4xQmoT-F/exec')loadData();
 });
 
 function setMonthDisplay(m){
@@ -577,7 +577,7 @@ function go(name){
 
 // ── API ───────────────────────────────────────────────────────
 async function api(p){
-  if(!SCRIPT_URL||SCRIPT_URL==='YOUR_APPS_SCRIPT_URL_HERE'){toast('⚠️ Set your Apps Script URL in the HTML');return null;}
+  if(!SCRIPT_URL||SCRIPT_URL==='https://script.google.com/macros/s/AKfycbwe-7g56wL5Ry_sXiVYMWbqXdMKlrfII-q34yIsb-FqYMEmq3DCpF38-3oN4xQmoT-F/exec'){toast('⚠️ Set your Apps Script URL in the HTML');return null;}
   try{const r=await fetch(SCRIPT_URL+'?'+new URLSearchParams(p));return await r.json();}
   catch(e){toast('Connection error — check URL');return null;}
 }
